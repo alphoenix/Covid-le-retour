@@ -72,7 +72,7 @@ read_delim("https://www.data.gouv.fr/fr/datasets/r/63352e38-d353-4b54-bfd1-f1b3e
               filter(jour >= as.Date("2020-08-01")) %>%
               pivot_wider(names_from=jour,values_from=c("hosp","rea"))) %>%
   ungroup() %>%
-  select(nom_dpt,tx_hosp,starts_with("hosp_"),tx_rea,starts_with("rea_")) %>%
+  select(nom_dpt,`Taux d'hosp.`=tx_hosp,starts_with("hosp_"),`Taux de réa.`=tx_rea,starts_with("rea_")) %>%
   write_csv("hosp_departements.csv")
 
 
